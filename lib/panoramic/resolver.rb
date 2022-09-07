@@ -33,7 +33,7 @@ module Panoramic
 
     # Initialize an ActionView::Template object based on the record found.
     def initialize_template(record)
-      source = record.body
+      source = record.body.to_s
       identifier = "#{record.class} - #{record.id} - #{record.path.inspect}"
       handler = ActionView::Template.registered_template_handler(record.handler)
 
